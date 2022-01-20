@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,27 +11,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 public class UserController {
 	@Autowired
 	IUserService userService;
-    @GetMapping("/user")
-	String  getUser() {
-    	System.out.println("testing");
-    	return "testing";
-		
+
+	@GetMapping("/user")
+    Iterable<User> getUsers() {
+		return userService.getUsers();
 	}
-	@PostMapping("/user") //create
+
+	@PostMapping("/user") // create
 	void createUser(@RequestBody User user) {
 		System.out.println(user.getName());
-		userService.saveUser(user);	
-		}
+		userService.saveUser(user);
+	}
+
 	@DeleteMapping("/user")
 	void deleteuser() {
 		// TODO Auto-generated method stub
-      
-	}
-	}
 
-
+	}
+}
