@@ -15,12 +15,16 @@ public class IUserService {
 		userRepository.save(user);
 		
 	}
-	public Iterable<User> getUsers(){
+	public Iterable<User> getUsers() {
 		return userRepository.findAll();
 	}
 	public Optional<User> getUser(Integer id){
 		return userRepository.findById(id);
+	}
+	public void deleteUser(Integer id) {
+		// TODO Auto-generated method stub
 		
 	}
+	
 
 }
