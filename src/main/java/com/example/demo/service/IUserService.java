@@ -19,8 +19,11 @@ public class IUserService {
 		return userRepository.findAll();
 	}
 	public Optional<User> getUser(Integer id) {
-		// TODO Auto-generated method stub
 		return userRepository.findById(id);
+	}
+	public void deleteUser(Integer id) {
+		userRepository.deleteById(id);
+		
 	}
 	
 	
