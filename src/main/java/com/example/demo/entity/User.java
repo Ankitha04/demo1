@@ -6,12 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.Range;
+
 @Entity
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@Range(min = 0)
 	private Integer age;
+
 	public Integer getAge() {
 		return age;
 	}
@@ -19,9 +23,10 @@ public class User {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
+
 	@NotBlank
 	private String name;
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -37,6 +42,5 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 
 }
