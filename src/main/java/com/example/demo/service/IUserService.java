@@ -8,7 +8,7 @@ import com.example.demo.entity.User;
 @Service
 public class IUserService {
 	@Autowired //DI
-	UserRepository userRepository; //comment
+	UserRepository userRepository; //com
 	public void saveUser(User user) {
 		userRepository.save(user);
 		
