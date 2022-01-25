@@ -16,7 +16,7 @@ public class IUserService {
 	@Transactional
 	public void saveUser(User user) {
 		userRepository.save(user);
-		throw new IllegalArgumentException();
+		//throw new IllegalArgumentException();
 		
 	}
 	public Iterable<User> getUsers() {
